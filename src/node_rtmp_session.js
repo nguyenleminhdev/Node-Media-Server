@@ -498,7 +498,7 @@ class NodeRtmpSession {
       this.bitrateCache.bytes = 0;
       this.bitrateCache.last_update = current_time;
 
-      context.nodeEvent.emit('rtmpChunkRead', data, p, bytes, this.bitrate, size, offset, extended_timestamp);
+      context.nodeEvent.emit('rtmpChunkRead', this.bitrate);
     }
   }
 
