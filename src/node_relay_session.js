@@ -47,7 +47,7 @@ class NodeRelaySession extends EventEmitter {
     });
 
     this.ffmpeg_exec.stderr.on('data', (data) => {
-      context.nodeEvent.emit('ffmpeg_exec', process.pid, `${data}`);
+      context.nodeEvent.emit('ffmpeg_exec', this.id, `${data}`);
       Logger.ffdebug(`FF输出：${data}`);
     });
 
