@@ -42,6 +42,7 @@ class NodeRelaySession extends EventEmitter {
     });
 
     this.ffmpeg_exec.stdout.on('data', (data) => {
+      console.log(data)
       Logger.ffdebug(`FF输出：${data}`);
     });
 
