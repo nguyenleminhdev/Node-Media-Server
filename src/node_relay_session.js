@@ -4,6 +4,7 @@
 //  Copyright (c) 2018 Nodemedia. All rights reserved.
 //
 const Logger = require('./node_core_logger');
+const context = require('./node_core_ctx');
 const NodeCoreUtils = require('./node_core_utils');
 
 const EventEmitter = require('events');
@@ -46,7 +47,7 @@ class NodeRelaySession extends EventEmitter {
     });
 
     this.ffmpeg_exec.stderr.on('data', (data) => {
-      console.log('>>>>', `${data}`)
+      context.nodeEvent.emit('ffmpeg_exec', `${data}`);
       Logger.ffdebug(`FF输出：${data}`);
     });
 
