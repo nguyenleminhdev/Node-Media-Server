@@ -33,10 +33,12 @@ class NodeFissionSession extends EventEmitter {
     });
 
     this.ffmpeg_exec.stdout.on('data', (data) => {
+      console.log(1, data)
       Logger.ffdebug(`FF输出：${data}`);
     });
 
     this.ffmpeg_exec.stderr.on('data', (data) => {
+      console.log(2, data)
       Logger.ffdebug(`FF输出：${data}`);
     });
 
