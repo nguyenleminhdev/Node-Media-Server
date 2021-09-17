@@ -397,7 +397,7 @@ class NodeRtmpSession {
    */
   rtmpChunkRead(data, p, bytes) {
     // Logger.log('rtmpChunkRead', p, bytes);
-    context.nodeEvent.emit('rtmpChunkRead', bytes);
+    context.nodeEvent.emit('rtmpChunkRead', data, p, bytes);
     let size = 0;
     let offset = 0;
     let extended_timestamp = 0;
