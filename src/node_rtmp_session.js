@@ -205,7 +205,7 @@ class NodeRtmpSession {
       }
 
       Logger.log(`[rtmp disconnect] id=${this.id}`);
-      context.nodeEvent.emit('doneConnect', this.id, this.connectCmdObj);
+      context.nodeEvent.emit('doneConnect', this.id, this.connectCmdObj, this.config);
 
       context.sessions.delete(this.id);
       this.socket.destroy();
